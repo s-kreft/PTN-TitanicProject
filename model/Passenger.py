@@ -1,6 +1,6 @@
 class Passenger:
-    def _init_(self, id, survived, passenger_class, name, gender, age, sibling_spouse, parent_children, ticket_number
-               ,fare):
+    def __init__(self, id, survived, passenger_class, name, gender, age, sibling_spouse, parent_children, ticket_number
+               , fare):
         self.id = id
         self.survived = survived
         self.passenger_class = passenger_class
