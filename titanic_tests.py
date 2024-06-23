@@ -24,6 +24,13 @@ class TitanicTests(unittest.TestCase):
         age_test = all(self.service.contemporary_data_frame['Wiek'] < 20)
         self.assertTrue(age_test)
 
+    def test_search_titanic_is_alive(self):
+        self.service = Service()
+        user_input = '1'
+        self.service.search_titanic_alive(user_input)
+        alive_test = all(self.service.contemporary_data_frame['Przeżył/a'] == 1)
+        self.assertTrue(alive_test)
+
 
 
     # def test_quick(self):
