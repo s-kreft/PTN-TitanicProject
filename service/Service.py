@@ -56,6 +56,16 @@ class Service:
             return print(self.contemporary_data_frame)
         else:
             return print("Niedozwolona operacja")
+    
+    def search_titanic_alive(self, alive_input):
+        if alive_input == '1':
+           self.contemporary_data_frame = self.contemporary_data_frame.loc[self.contemporary_data_frame['Przeżył/a'] == 1]
+           return print(self.contemporary_data_frame)
+        elif alive_input == '0':
+            self.contemporary_data_frame = self.contemporary_data_frame.loc[self.contemporary_data_frame['Przeżył/a'] == 0]
+            return print(self.contemporary_data_frame)
+        else:
+            return print("Niedozwolona operacja")
 
     def titanic_age_pie_chart(self):
         plt.hist(self.contemporary_data_frame.loc[self.contemporary_data_frame['Wiek']])

@@ -9,8 +9,8 @@ class UserInterface:
               "|**********************************************************|\n"             
               "|Wyświetlenie danych - wybierz 1                           |\n"
               "|Filtrowanie danych wg płci - wybierz 2                    |\n"
-              "|DO POPRAWY Przeszukaj dane - wybierz 3                    |\n"
-              "|Filtrowanie danych wg wieku - wybierz 4                    |\n"
+              "|Filtrowanie danych wg przeżył/a - wybierz 3               |\n"
+              "|Filtrowanie danych wg wieku - wybierz 4                   |\n"
               "|Wyświetlenie wykresu słupkowego dla wieku - wybierz 5     |\n"
               "|Zresetowanie wyszukiwania - wybierz 6                     |\n"
               "|Wyjdź z programu - wybierz q                              |\n"
@@ -28,7 +28,8 @@ class UserInterface:
                 self.service.search_gender_titanic_data(gender_input)
                 print("Wybrałeś 2")
             elif user_input == "3":
-                self.service.search_titanic_data()
+                alive_input = input("Wybierz 1 żeby wyszukać osoby, które przeżyły lub 0 żeby wyszukać osoby, które zginęły")
+                self.service.search_titanic_alive(alive_input)
                 print("Wybrałeś 3")
             elif user_input == "4":
                 search_input = input("Podaj wartość\n")
