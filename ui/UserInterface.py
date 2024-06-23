@@ -4,26 +4,31 @@ class UserInterface:
         self.service = service
     def init_message(self):
         self.service.titanic_data()
-        print("Witaj w programie Titanic Data")
-        print("Inicjalizacja danych - wybierz 1\n"
-              "Wyświetlenie danych - wybierz 2\n"
-              "Przeszukaj dane - wybierz 3\n"
-              "Filtruj po wieku - wybierz 4\n"
-              "Wyświetl wykres - wybierz 5\n"
-              "Wyjdź z programu - wybierz q")
+        print("|----------------------------------------------------------|\n"
+              "|            Witaj w programie Titanic Data                |\n"
+              "|**********************************************************|\n"             
+              "|Wyświetlenie danych - wybierz 1                           |\n"
+              "|Filtrowanie danych wg płci - wybierz 2                    |\n"
+              "|DO POPRAWY Przeszukaj dane - wybierz 3                    |\n"
+              "|Filtrowanie danych wg wieku - wybierz 4                    |\n"
+              "|Wyświetlenie wykresu słupkowego dla wieku - wybierz 5     |\n"
+              "|Zresetowanie wyszukiwania - wybierz 6                     |\n"
+              "|Wyjdź z programu - wybierz q                              |\n"
+              "|----------------------------------------------------------|")
     def switch(self):
         running = True
         while running == True:
+            self.init_message()
             user_input = input("Wybierz akcję\n")
             if user_input == "1":
-                self.service.titanic_data()
+                self.service.show_titanic_data()
                 print("Wybrałeś 1")
             elif user_input == "2":
-                self.service.show_titanic_data()
+                gender_input = input("Wybierz k żeby wyszukać kobiety lub m żeby wyszukać męższczyzn")
+                self.service.search_gender_titanic_data(gender_input)
                 print("Wybrałeś 2")
             elif user_input == "3":
-                search_input = input("Podaj wartość\n")
-                self.service.search_titanic_data(search_input)
+                self.service.search_titanic_data()
                 print("Wybrałeś 3")
             elif user_input == "4":
                 search_input = input("Podaj wartość\n")

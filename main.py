@@ -5,7 +5,7 @@ def main():
     service = Service()
     user_interface = UserInterface(service)
 
-    user_interface.init_message()
+   # user_interface.init_message()
     user_interface.switch()
 
 
