@@ -12,7 +12,8 @@ class Service:
 
     def __init__(self, titanic_dataframe = None):
         self.titanic_dataframe = titanic_dataframe
-        self.contemporary_data_frame
+        self.contemporary_data_frame = None
+        self.titanic_data()
 
     def titanic_data(self):
         pd.set_option('display.max_rows', 900)

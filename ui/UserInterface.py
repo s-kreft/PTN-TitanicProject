@@ -3,7 +3,7 @@ class UserInterface:
     def __init__(self, service):
         self.service = service
     def init_message(self):
-        self.service.titanic_data()
+        #self.service.titanic_data()
         print("|----------------------------------------------------------|\n"
               "|            Witaj w programie Titanic Data                |\n"
               "|**********************************************************|\n"             
@@ -37,6 +37,9 @@ class UserInterface:
             elif user_input == "5":
                 self.service.titanic_age_plot()
                 print("Wybrałeś 5")
+            elif user_input == "6":
+                self.service.data_frame_reset()
+                print("Wybrałeś 6")
             elif user_input == "q":
                 running = False
                 print("Wyszedłeś z programu")
