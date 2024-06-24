@@ -25,7 +25,7 @@ class UserInterface:
                 self.service.show_titanic_data()
                 print("Wybrałeś 1")
             elif user_input == "2":
-                gender_input = input("Wybierz k żeby wyszukać kobiety lub m żeby wyszukać męższczyzn\n")
+                gender_input = input("Wybierz k żeby wyszukać kobiety lub m żeby wyszukać mężczyzn\n")
                 self.service.search_gender_titanic_data(gender_input)
                 print("Wybrałeś 2")
             elif user_input == "3":
