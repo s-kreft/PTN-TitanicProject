@@ -8,3 +8,5 @@ Python 3.10.4
 Numpy 2.0.0
 Pandas 2.2.2
 Matplotlib 3.9.0
+
+Link do wykorzystanego datasetu: https://www.kaggle.com/datasets/yasserh/titanic-dataset
