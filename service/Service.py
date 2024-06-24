@@ -67,13 +67,23 @@ class Service:
         else:
             return print("Niedozwolona operacja")
 
-    def titanic_age_pie_chart(self):
-        plt.hist(self.contemporary_data_frame.loc[self.contemporary_data_frame['Wiek']])
+    def titanic_is_alive_pie_chart(self):
+        counts = self.contemporary_data_frame['Przeżył/a'].value_counts()
+        labels = ['Przeżyło', 'Nie Przeżyło']
+        sizes = [counts[1], counts[0]]
+        colors = ['green', 'grey']
+        plt.pie(sizes, labels=labels, colors=colors, autopct='%1.1f%%', startangle=140, shadow=True, explode=[0.12, 0])
+        plt.axis('equal')
+        plt.title("Procent osób, które przeżyły")
         return plt.show()
 
     def titanic_age_plot(self):
+        age_counts = self.contemporary_data_frame['Wiek'].value_counts().sort_index()
         plt.figure(figsize=(8, 6))
-        self.contemporary_data_frame['Wiek'].value_counts().plot(kind='bar', color='skyblue')
+        plt.bar(age_counts.index, age_counts.values, color='skyblue')
+        plt.xlabel("Wiek w latach")
+        plt.ylabel("Liczba osób")
+        plt.title("Liczba osób w poszczególnych grupach wiekowych")
         return plt.show()
 
     def data_frame_reset(self):

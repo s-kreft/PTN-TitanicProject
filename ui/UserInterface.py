@@ -12,7 +12,8 @@ class UserInterface:
               "|Filtrowanie danych wg przeżył/a - wybierz 3               |\n"
               "|Filtrowanie danych wg wieku - wybierz 4                   |\n"
               "|Wyświetlenie wykresu słupkowego dla wieku - wybierz 5     |\n"
-              "|Zresetowanie wyszukiwania - wybierz 6                     |\n"
+              "|Wykres kołowy osób, które przeżyły - wybierz 6            |\n"
+              "|Zresetowanie wyszukiwania - wybierz 7                     |\n"
               "|Wyjdź z programu - wybierz q                              |\n"
               "|----------------------------------------------------------|")
     def switch(self):
@@ -39,8 +40,11 @@ class UserInterface:
                 self.service.titanic_age_plot()
                 print("Wybrałeś 5")
             elif user_input == "6":
-                self.service.data_frame_reset()
+                self.service.titanic_is_alive_pie_chart()
                 print("Wybrałeś 6")
+            elif user_input == "7":
+                self.service.data_frame_reset()
+                print("Wybrałeś 7")
             elif user_input == "q":
                 running = False
                 print("Wyszedłeś z programu")
