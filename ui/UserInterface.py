@@ -25,11 +25,11 @@ class UserInterface:
                 self.service.show_titanic_data()
                 print("Wybrałeś 1")
             elif user_input == "2":
-                gender_input = input("Wybierz k żeby wyszukać kobiety lub m żeby wyszukać męższczyzn")
+                gender_input = input("Wybierz k żeby wyszukać kobiety lub m żeby wyszukać męższczyzn\n")
                 self.service.search_gender_titanic_data(gender_input)
                 print("Wybrałeś 2")
             elif user_input == "3":
-                alive_input = input("Wybierz 1 żeby wyszukać osoby, które przeżyły lub 0 żeby wyszukać osoby, które zginęły")
+                alive_input = input("Wybierz 1 żeby wyszukać osoby, które przeżyły lub 0 żeby wyszukać osoby, które zginęły\n")
                 self.service.search_titanic_alive(alive_input)
                 print("Wybrałeś 3")
             elif user_input == "4":

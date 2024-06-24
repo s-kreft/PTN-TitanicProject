@@ -16,10 +16,14 @@ class Service:
         self.titanic_data()
 
     def titanic_data(self):
-        pd.set_option('display.max_rows', 900)
-        pd.set_option('display.max_columns', 500)
-        pd.set_option('display.width', 1000)
-        titanic_data = pd.read_csv("data/Titanic-Dataset.csv")
+        try:
+            pd.set_option('display.max_rows', 900)
+            pd.set_option('display.max_columns', 500)
+            pd.set_option('display.width', 1000)
+            titanic_data = pd.read_csv("data/Titanic-Dataset.csv")
+            
+        except FileNotFoundError:
+            print("Plik nie istnieje")
 
         titanic_columns = ['Id', 'Przeżył/a', 'Klasa podróży', 'Imię', 'Płeć',
                    'Wiek', 'Rodzeństwo/Małżonek', 'Rodzice/Dzieci', 'Numer Biletu', 'Koszt', 'Numer Kabiny',
